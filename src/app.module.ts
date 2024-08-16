@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { DnaMarkersModule } from './dna-markers/dna-markers.module';
+import { DnaMarkerOptionsModule } from './dna-marker-options/dna-marker-options.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+	imports: [DnaMarkersModule, DnaMarkerOptionsModule],
 })
 export class AppModule {}
