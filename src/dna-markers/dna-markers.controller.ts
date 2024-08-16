@@ -1,4 +1,16 @@
-import { Controller, Get, Post, Put, Delete, Param, Body, UsePipes, ValidationPipe, ParseIntPipe, NotFoundException } from '@nestjs/common';
+import {
+	Controller,
+	Get,
+	Post,
+	Put,
+	Delete,
+	Param,
+	Body,
+	UsePipes,
+	ValidationPipe,
+	ParseIntPipe,
+	NotFoundException,
+} from '@nestjs/common';
 import { DnaMarkersService } from './dna-markers.service';
 import { CreateDnaMarkerDto } from './dto/create-dna-marker.dto';
 import { UpdateDnaMarkerDto } from './dto/update-dna-marker.dto';
@@ -30,7 +42,10 @@ export class DnaMarkersController {
 
 	@Put(':id')
 	@UsePipes(new ValidationPipe())
-	async update(@Param('id', ParseIntPipe) id: number, @Body() updateDnaMarkerDto: UpdateDnaMarkerDto): Promise<dna_marker> {
+	async update(
+		@Param('id', ParseIntPipe) id: number,
+		@Body() updateDnaMarkerDto: UpdateDnaMarkerDto,
+	): Promise<dna_marker> {
 		return this.dnaMarkersService.update({ id, ...updateDnaMarkerDto });
 	}
 

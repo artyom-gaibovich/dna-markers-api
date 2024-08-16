@@ -1,8 +1,9 @@
-import { IsNumber, IsString, Length } from 'class-validator';
+import { IsNumber, IsOptional, IsString, Length } from 'class-validator';
 
 export class UpdateDnaMarkerDto {
+	@IsOptional()
 	@IsNumber()
-	id: number;
+	id?: number;
 
 	@IsString()
 	@Length(1, 50)
