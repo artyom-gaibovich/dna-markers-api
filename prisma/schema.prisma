@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model dna_marker {
+  id      Int                 @id @default(autoincrement())
+  name    String              @unique
+  options dna_marker_option[]
+}
+
+model dna_marker_option {
+  id       Int        @id @default(autoincrement())
+  title    String
+  markerId Int
+  marker   dna_marker @relation(fields: [markerId], references: [id], onDelete: Cascade)
+}
