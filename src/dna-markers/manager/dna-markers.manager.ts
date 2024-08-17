@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service';
+import { PrismaService } from '../../prisma/prisma.service';
 import { dna_marker } from '@prisma/client';
-import { CreateDnaMarkerDto } from './dto/create-dna-marker.dto';
-import { UpdateDnaMarkerDto } from './dto/update-dna-marker.dto';
+import { CreateDnaMarkerDto } from '../dto/create-dna-marker.dto';
+import { UpdateDnaMarkerDto } from '../dto/update-dna-marker.dto';
 
 @Injectable()
 export class DnaMarkerManager {

@@ -11,7 +11,7 @@ import {
 	ParseIntPipe,
 	NotFoundException,
 } from '@nestjs/common';
-import { DnaMarkersService } from './dna-markers.service';
+import { DnaMarkersService } from './service/dna-markers.service';
 import { CreateDnaMarkerDto } from './dto/create-dna-marker.dto';
 import { UpdateDnaMarkerDto } from './dto/update-dna-marker.dto';
 import { dna_marker } from '@prisma/client';

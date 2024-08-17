@@ -1,5 +1,5 @@
-import { DnaMarkerOptionsRepository } from './dna-marker-options.repository';
-import { DnaMarkerOptionsManager } from './dna-marker-options.manager';
+import { DnaMarkerOptionsRepository } from './repository/dna-marker-options.repository';
+import { DnaMarkerOptionsManager } from './manager/dna-marker-options.manager';
 import { DIConstants } from '../DIConstants';
 
 export const DnaMarkerOptionsProviders = [
