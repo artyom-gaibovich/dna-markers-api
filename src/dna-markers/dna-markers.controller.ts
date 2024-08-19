@@ -11,7 +11,7 @@ import {
 	ParseIntPipe,
 	NotFoundException,
 } from '@nestjs/common';
-import { DnaMarkersService } from './dna-markers.service';
+import { DnaMarkersService } from './service/dna-markers.service';
 import { CreateDnaMarkerDto } from './dto/create-dna-marker.dto';
 import { UpdateDnaMarkerDto } from './dto/update-dna-marker.dto';
 import { dna_marker } from '@prisma/client';
@@ -23,6 +23,15 @@ export class DnaMarkersController {
 	@Get()
 	async findAll(): Promise<dna_marker[]> {
 		return this.dnaMarkersService.findAll();
+	}
+
+	@Get('full')
+	async findAllFull(): Promise<{
+		marker_id: number;
+		marker_name: string;
+		marker_title: string;
+	}> {
+		return await this.dnaMarkersService.findAllFull();
 	}
 
 	@Get(':id')

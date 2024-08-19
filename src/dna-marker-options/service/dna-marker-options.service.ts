@@ -1,10 +1,10 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { DIConstants } from '../DIConstants';
+import { DIConstants } from '../../DIConstants';
 import { dna_marker_option } from '@prisma/client';
-import { CreateDnaMarkerOptionDto } from './dto/create-dna-marker-option.dto';
-import { UpdateDnaMarkerOptionDto } from './dto/update-dna-marker-option.dto';
-import { DnaMarkerOptionsManagerInterface } from './dna-marker-options.interface';
-import { DnaMarkerOptionsRepositoryInterface } from './dna-markers-options.repository';
+import { CreateDnaMarkerOptionDto } from '../dto/create-dna-marker-option.dto';
+import { UpdateDnaMarkerOptionDto } from '../dto/update-dna-marker-option.dto';
+import { DnaMarkerOptionsManagerInterface } from '../manager/dna-marker-options.manager.interface';
+import { DnaMarkerOptionsRepositoryInterface } from '../repository/dna-marker-options.repository.interface';
 
 @Injectable()
 export class DnaMarkerOptionsService {

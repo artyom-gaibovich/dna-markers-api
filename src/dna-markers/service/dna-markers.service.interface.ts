@@ -1,6 +1,6 @@
-import { DnaMarker } from '../interfaces/dna-marker.interface';
-import { CreateDnaMarkerDto } from './dto/create-dna-marker.dto';
-import { UpdateDnaMarkerDto } from './dto/update-dna-marker.dto';
+import { DnaMarker } from '../../interfaces/dna-marker.interface';
+import { CreateDnaMarkerDto } from '../dto/create-dna-marker.dto';
+import { UpdateDnaMarkerDto } from '../dto/update-dna-marker.dto';
 
 export interface DnaMarkersServiceInterface {
 	findAll(): DnaMarker[];
