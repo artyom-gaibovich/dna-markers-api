@@ -25,6 +25,15 @@ export class DnaMarkersController {
 		return this.dnaMarkersService.findAll();
 	}
 
+	@Get('full')
+	async findAllFull(): Promise<{
+		marker_id: number;
+		marker_name: string;
+		marker_title: string;
+	}> {
+		return await this.dnaMarkersService.findAllFull();
+	}
+
 	@Get(':id')
 	async findById(@Param('id', ParseIntPipe) id: number): Promise<dna_marker> {
 		const marker = await this.dnaMarkersService.findById(id);

@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { DIConstants } from '../../DIConstants';
 import { dna_marker } from '@prisma/client';
 import { CreateDnaMarkerDto } from '../dto/create-dna-marker.dto';
@@ -16,6 +16,7 @@ export class DnaMarkersService {
 	) {}
 
 	async findAll(): Promise<dna_marker[]> {
+		//TODO нужно крч здесь написать LEFT JOIN который вытащит все данные с наименованиями.
 		return this.dnaMarkerRepository.findAll();
 	}
 
@@ -33,5 +34,13 @@ export class DnaMarkersService {
 
 	async delete(id: number): Promise<dna_marker> {
 		return this.dnaMarkerManager.delete(id);
+	}
+
+	async findAllFull(): Promise<{
+		marker_id: number;
+		marker_name: string;
+		marker_title: string;
+	}> {
+		return await this.dnaMarkerRepository.findAllFull();
 	}
 }
