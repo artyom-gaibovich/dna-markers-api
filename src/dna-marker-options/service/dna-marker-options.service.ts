@@ -9,8 +9,10 @@ import { DnaMarkerOptionsRepositoryInterface } from '../repository/dna-marker-op
 @Injectable()
 export class DnaMarkerOptionsService {
 	constructor(
-		@Inject(DIConstants.DnaMarkerOptionsRepository) private readonly dnaMarkerOptionsRepository: DnaMarkerOptionsRepositoryInterface,
-		@Inject(DIConstants.DnaMarkerOptionsManager) private readonly dnaMarkerOptionsManager: DnaMarkerOptionsManagerInterface,
+		@Inject(DIConstants.DnaMarkerOptionsRepository)
+		private readonly dnaMarkerOptionsRepository: DnaMarkerOptionsRepositoryInterface,
+		@Inject(DIConstants.DnaMarkerOptionsManager)
+		private readonly dnaMarkerOptionsManager: DnaMarkerOptionsManagerInterface,
 	) {}
 
 	async findAll(markerId: number): Promise<dna_marker_option[]> {

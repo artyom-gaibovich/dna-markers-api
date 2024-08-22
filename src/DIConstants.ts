@@ -3,5 +3,9 @@ export enum DIConstants {
 	DnaMarkerOptionsRepository = 'DnaMarkerOptionsRepository',
 	DnaMarkerManager = 'DnaMarkerManager',
 	DnaMarkerOptionsManager = 'DnaMarkerOptionsManager',
+
+	//Services
 	PrismaService = 'PrismaService',
+	DnaMarkersService = 'DnaMarkersService',
+	DnaMarkerOptionsService = 'DnaMarkerOptionsService',
 }
