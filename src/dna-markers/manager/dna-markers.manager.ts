@@ -1,12 +1,13 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { dna_marker } from '@prisma/client';
 import { CreateDnaMarkerDto } from '../dto/create-dna-marker.dto';
 import { UpdateDnaMarkerDto } from '../dto/update-dna-marker.dto';
+import { DIConstants } from '../../DIConstants';
 
 @Injectable()
 export class DnaMarkerManager {
-	constructor(private readonly prisma: PrismaService) {}
+	constructor(@Inject(DIConstants.PrismaService) private readonly prisma: PrismaService) {}
 
 	async create(data: CreateDnaMarkerDto): Promise<dna_marker> {
 		return this.prisma.dna_marker.create({ data });

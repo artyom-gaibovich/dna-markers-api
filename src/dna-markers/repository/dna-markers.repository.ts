@@ -1,11 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { dna_marker, Prisma } from '@prisma/client';
 import { DnaMarkerRepositoryInterface } from './dna-markers.repository.interface';
+import { DIConstants } from '../../DIConstants';
 
 @Injectable()
 export class DnaMarkerRepository implements DnaMarkerRepositoryInterface {
-	constructor(private readonly prisma: PrismaService) {}
+	constructor(@Inject(DIConstants.PrismaService) private readonly prisma: PrismaService) {}
 
 	async findById(id: number): Promise<dna_marker | null> {
 		return this.prisma.dna_marker.findUnique({ where: { id } });
