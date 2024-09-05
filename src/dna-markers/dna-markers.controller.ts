@@ -19,11 +19,12 @@ import { UpdateDnaMarkerDto } from './dto/update-dna-marker.dto';
 import { dna_marker } from '@prisma/client';
 import { JwtAuthGuard } from '../dna-marker-options/auth/guards/jwt-guard';
 import { DIConstants } from '../DIConstants';
+import { DnaMarkersServiceInterface } from './service/dna-markers.service.interface';
 
 @Controller('dna-markers')
 export class DnaMarkersController {
 	constructor(
-		@Inject(DIConstants.DnaMarkersService) private readonly dnaMarkersService: DnaMarkersService,
+		@Inject(DIConstants.DnaMarkersService) private readonly dnaMarkersService: DnaMarkersServiceInterface,
 	) {}
 
 	@UseGuards(JwtAuthGuard)
